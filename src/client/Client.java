@@ -7,9 +7,6 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import java.util.Scanner;
 
-/*
- * This class is used to send a text message to the queue.
- */
 public class Client {
 
     /*
@@ -51,6 +48,7 @@ public class Client {
          * Destination represents here our queue 'MESSAGE_QUEUE' on the JMS server.
          *
          * MessageProducer is used for sending messages to the queue.
+         * MessageConsumer is used for receiving (consuming) messages
          */
         MessageProducer producer = session.createProducer(destinationURLRequest);
         MessageConsumer consumer = session.createConsumer(destinationResponse);

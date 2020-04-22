@@ -10,9 +10,6 @@ import org.jsoup.nodes.Document;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-/*
- * This class is used to receive the text message from the queue.
- */
 public class Server {
 
     /*
@@ -45,14 +42,13 @@ public class Server {
 //        Session session2 = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
         /*
-         * Destination represents here our queue 'MESSAGE_QUEUE' on the JMS server.
-         *
-         * MessageConsumer is used for receiving messages from the queue.
+         * Destination represents here our queue 'name_QUEUE' on the JMS server.
          */
         Destination destinationURLRequest = session.createQueue(queueURLRequest);
         Destination destinationResponse = session.createQueue(queueResponse);
 
         /*
+         * MessageProducer is used for sending messages to the queue.
          * MessageConsumer is used for receiving (consuming) messages
          */
         MessageConsumer consumerRequest = session.createConsumer(destinationURLRequest);
